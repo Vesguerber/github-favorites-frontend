@@ -1,0 +1,15 @@
+@import '../../../main-styles.scss';
+.card {
+    width: 350px;
+    margin: 10px;
+
+    a:hover {
+        color:$primary;
+    }
+
+    .content {
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

@@ -1,0 +1,11 @@
+section.repo-items-section {
+    width: 1200px;
+    margin: 100px auto;
+
+    div.repo-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
