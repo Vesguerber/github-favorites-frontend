@@ -2,6 +2,19 @@ section.repo-items-section {
     width: 1200px;
     margin: 100px auto;
 
+    .topo {
+        display: flex;
+
+        h1 {
+            width: 50%;
+        }
+
+        h2 {
+            width: 50%;
+            text-align: right;
+        }
+    }
+
     div.repo-items {
         display: flex;
         flex-wrap: wrap;

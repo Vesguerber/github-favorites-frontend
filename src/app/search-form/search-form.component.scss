@@ -1,0 +1,21 @@
+@import "../../main-styles.scss";
+
+section.search {
+  margin: 20px auto;
+  width: 710px;
+  
+  form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+}
+
+app-search-form {
+  width: 100%;
+}
+
+section.search input[type="text"] {
+  width: 600px;
+  padding: 0 5px;
+}

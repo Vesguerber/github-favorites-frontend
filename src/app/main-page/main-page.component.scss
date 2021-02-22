@@ -4,6 +4,7 @@ h1 {
     text-align: center;
     font-size: 70px;
     color: #444;
+    margin: 70px 0;
 }
 
 p {
@@ -12,16 +13,4 @@ p {
     color: #444;
 }
 
-section.search {
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-between;
-    width: 710px;
-    align-items: center;
-}
 
-
-section.search input[type="text"] {
-    width: 600px;
-    padding: 0 5px;
-}

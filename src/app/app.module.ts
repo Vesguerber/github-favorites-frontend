@@ -7,6 +7,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RepoListComponent } from './repo-list/repo-list.component';
 import { RepoCardComponent } from './repo-list/repo-card/repo-card.component';
+import { SearchFormComponent } from './search-form/search-form.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { RepoCardComponent } from './repo-list/repo-card/repo-card.component';
     MainPageComponent,
     RepoListComponent,
     RepoCardComponent,
+    SearchFormComponent,
   ],
   imports: [
     BrowserModule,
