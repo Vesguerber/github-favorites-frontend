@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Repo } from '../repo';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditModalComponent } from '../edit-modal/edit-modal.component';
 
 @Component({
   selector: 'app-repo-list',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoListComponent implements OnInit {
 
-  constructor() { }
+  @Input() reposits: Repo[] = new Array<Repo>();
+
+
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  onCardClicked(item: Repo){
+    const dialogRef = this.dialog.open(EditModalComponent, {
+      width: '580px',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+        this.reposits[this.reposits.indexOf(item)] = result;
+      }
+    })
+  }
+
+  
+}
+
+export interface UpdateEvent {
+  old: Repo,
+  new: Repo,
 }

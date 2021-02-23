@@ -1,18 +1,15 @@
 <section class="repo-items-section">
   <div class="repo-items-container">
-    <div class="topo">
+    <div class="topo" *ngIf="reposits.length > 0">
       <h1 class="title">Repositórios</h1>
-      <h2 class="title" style="color: #666;">Vesguerber</h2>
+      <h2 class="title" style="color: #666">{{ reposits[0].owner.login }}</h2>
     </div>
     <div class="repo-items">
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
-        <app-repo-card></app-repo-card>
+      <app-repo-card
+        *ngFor="let repo of reposits"
+        [item]="repo"
+        (cardClick)="onCardClicked(repo)"
+      ></app-repo-card>
     </div>
   </div>
 </section>

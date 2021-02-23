@@ -8,6 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RepoListComponent } from './repo-list/repo-list.component';
 import { RepoCardComponent } from './repo-list/repo-card/repo-card.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
+import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +22,19 @@ import { SearchFormComponent } from './search-form/search-form.component';
     RepoListComponent,
     RepoCardComponent,
     SearchFormComponent,
+    EditModalComponent,
+    FavoritesPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
+  entryComponents: [EditModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

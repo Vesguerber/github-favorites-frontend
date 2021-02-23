@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Repo } from '../repo';
+import { RepoService } from '../repo.service';
 
 @Component({
   selector: 'app-search-form',
@@ -6,10 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
+  dados:Repo[];
+  
+  @Input() repos: Repo[];
+  @Output() formSubmit: EventEmitter<Repo[]> = new EventEmitter<Repo[]>();
 
-  constructor() { }
+  constructor(private service: RepoService) { }
 
   ngOnInit(): void {
+  }
+  
+  onSubmit(form: NgForm){
+    this.service.list(form.value.user).subscribe((value)=> {
+      this.dados = value
+      this.formSubmit.emit(this.dados);
+    });
+    //this.formSubmit.emit(this.dados);
+    form.reset();
   }
 
 }

@@ -1,6 +1,6 @@
 <section class="search">
-  <form action="">
-    <input class="input is-primary" type="text" placeholder="Vesguerber" />
-    <input class="button is-primary" type="submit" value="Pesquisar" />
+  <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+    <input class="input is-primary" type="text" placeholder="Vesguerber" ngModel id="user" name="user" />
+    <input class="button is-primary" type="submit"  value="Pesquisar" />
   </form>
 </section>

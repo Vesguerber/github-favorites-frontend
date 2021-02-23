@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Repo } from '../repo';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  repos: Repo[] = new Array<Repo>();
+
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getRepos(items: Repo[]) {
+    this.repos = items;
   }
 
 }

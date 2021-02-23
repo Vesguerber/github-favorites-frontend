@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Repo } from 'src/app/repo';
 
 @Component({
   selector: 'app-repo-card',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoCardComponent implements OnInit {
 
+  @Input() item: Repo;
+
+  @Output() cardClick: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onCardClick() {
+    this.cardClick.emit();
   }
 
 }
