@@ -1,14 +1,12 @@
 
 <h1  style="display: flex; justify-content: space-between;">
     <div class="titulo">
-        <i class="fas fa-book " style="margin-right: 10px;"></i>
-        Repo-Name-Teste
+        <i class="fas fa-book" style="margin-right: 10px;"></i>
+        {{ item.name }}
     </div>
-    <a><i class="far fa-star " style="margin-right: 20px;"></i></a>
+    <a><i class={{isFav}} style="margin-right: 20px;"></i></a>
 </h1>
 <p>
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi minus,
-  pariatur tempora amet qui aliquam magni alias vitae iure maiores deserunt
-  voluptates neque explicabo aut aspernatur sit? Eos, molestias adipisci.
+  {{ item.description }}
 </p>
-<h3>PHP</h3>
+<h3>{{ item.language }}</h3>

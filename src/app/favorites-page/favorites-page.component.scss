@@ -1,0 +1,13 @@
+@import '../../main-styles.scss';
+
+h1 {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  i {
+      color: $primary;
+      margin-right: 12px;
+  }
+  
+}

@@ -7,6 +7,7 @@ h1 {
     }
 
   i {
+    
     &.fa-book {
       color: $primary;
     }
@@ -14,6 +15,10 @@ h1 {
     &.fa-star {
         font-size: 16px;
         color: black;
+
+        &.fas {
+          color: $green;
+        }
 
         &:hover {
             color: $green;

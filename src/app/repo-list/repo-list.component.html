@@ -1,6 +1,6 @@
 <section class="repo-items-section">
   <div class="repo-items-container">
-    <div class="topo" *ngIf="reposits.length > 0">
+    <div class="topo" *ngIf="reposits.length > 0 && !ocultaTitulo">
       <h1 class="title">Repositórios</h1>
       <h2 class="title" style="color: #666">{{ reposits[0].owner.login }}</h2>
     </div>

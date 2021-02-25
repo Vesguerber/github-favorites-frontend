@@ -11,7 +11,7 @@ import { EditModalComponent } from '../edit-modal/edit-modal.component';
 export class RepoListComponent implements OnInit {
 
   @Input() reposits: Repo[] = new Array<Repo>();
-
+  @Input() ocultaTitulo: boolean = false;
 
   constructor(public dialog: MatDialog) { }
 

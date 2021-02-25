@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FavoritesService } from '../favorites.service';
 import { Repo } from '../repo';
 
 @Component({
@@ -8,11 +10,21 @@ import { Repo } from '../repo';
 })
 export class EditModalComponent implements OnInit {
 
-  @Input() item: Repo;
+  isFav:string;
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<EditModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public item: Repo,
+    private service: FavoritesService
+  ) 
+  {
+
+  }
 
   ngOnInit(): void {
+    this.isFav = "fa-star fas";
+    this.isFav = "far fa-star";
+        
   }
 
 }
