@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Favorites } from '../favorites';
 import { FavoritesService } from '../favorites.service';
 import { Repo } from '../repo';
 
@@ -11,12 +12,12 @@ import { Repo } from '../repo';
 export class FavoritesPageComponent implements OnInit {
   
   repos: Repo[] = new Array<Repo>();
-  stringFav: string;
 
   constructor(private service: FavoritesService) { }
 
   ngOnInit(): void {
     this.repos = this.service.list();
+    
   }
 
 }

@@ -4,7 +4,7 @@
         <i class="fas fa-book" style="margin-right: 10px;"></i>
         {{ item.name }}
     </div>
-    <a><i class={{isFav}} style="margin-right: 20px;"></i></a>
+    <a (click)="onStarClick(item.id)" ><i class="far fa-star" style="margin-right: 20px;"></i></a>
 </h1>
 <p>
   {{ item.description }}

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { element } from 'protractor';
 import { Repo } from 'src/app/repo';
 
 @Component({
@@ -9,12 +10,18 @@ import { Repo } from 'src/app/repo';
 export class RepoCardComponent implements OnInit {
 
   @Input() item: Repo;
+  @Input() favoritos: string;
+
+
+
 
   @Output() cardClick: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
 
   onCardClick() {

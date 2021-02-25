@@ -9,16 +9,16 @@ import { Repo } from './repo';
 
 export class FavoritesService {
 
+  //private readonly API = 'https://localhost:44314/api/favorite/';
   private readonly API = 'https://localhost:44314/api/favorite/';
   private readonly APIGit = 'https://api.github.com/repositories/';
   favorites: Favorites[];
-  public isFav;
   repos: Repo[] = new Array<Repo>();
+  jsonFav: string = '';
 
   constructor(private http: HttpClient) { }
 
   list() {
-    var favorites: Favorites[];
     this.http.get<Favorites[]>(this.API).subscribe((value) => {
       this.favorites = value
       this.favorites.map((fav) => {
@@ -32,5 +32,12 @@ export class FavoritesService {
     return this.repos;
   }
 
+  insertFav(id) {
+    const headers = { "Access-Control-Allow-Origin": "*"};
+    const body = { repoId: id};
+    this.http.post<any>(this.API,body,{headers}).subscribe(console.log);
+  }
+
+  
   
 }
